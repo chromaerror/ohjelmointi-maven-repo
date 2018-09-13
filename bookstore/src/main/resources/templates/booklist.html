@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Blah page</title>
+</head>
+
+<body>
+	<table class="table table-striped">
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+			<th>ISBN</th>
+			<th>Price</th>
+		</tr>
+		<tr th:each = "book : ${books}">
+			<td th:text="${book.getTitle()}"></td>
+			<td th:text="${book.getAuthor()}"></td>
+			<td th:text="${book.getYear()}"></td>
+			<td th:text="${book.getIsbn()}"></td>
+			<td th:text="${book.getPrice()}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
