@@ -26,6 +26,7 @@ public class Book {
 	private float price;
 	
 	// Getters
+	public Long getId() { return id; }
 	public String getTitle() { return title; }
 	public String getAuthor() { return author; }
 	public String getIsbn() { return isbn; }
@@ -45,32 +46,24 @@ public class Book {
 		this.title = "";
 		this.author = "";
 		this.isbn = "";
-		this.price = 0;
-		this.year = 0;
 	}
 	
 	public Book(String title) {
 		this.title = title;
 		this.author = "";
 		this.isbn = "";
-		this.price = 0;
-		this.year = 0;
 	}
 	
 	public Book(String title, String author) {
 		this.title = title;
 		this.author = author;
 		this.isbn = "";
-		this.price = 0;
-		this.year = 0;
 	}
 	
 	public Book(String title, String author, String isbn) {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
-		this.price = 0;
-		this.year = 0;
 	}
 	
 	public Book(String title, String author, String isbn, int year) {
@@ -78,7 +71,6 @@ public class Book {
 		this.author = author;
 		this.isbn = isbn;
 		this.year = year;
-		this.price = 0;
 	}
 	
 	public Book(String title, String author, String isbn, float price) {
@@ -86,7 +78,6 @@ public class Book {
 		this.author = author;
 		this.isbn = isbn;
 		this.price = price;
-		this.year = 0;
 	}
 	
 	
