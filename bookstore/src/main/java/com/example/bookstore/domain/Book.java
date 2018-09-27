@@ -10,7 +10,7 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", isbn=" + isbn + ", year=" + year + ", price=" + price
+		return "Book [id = " + id + "title=" + title + ", author=" + author + ", isbn=" + isbn + ", year=" + year + ", price=" + price
 				+ "]";
 	}
 
@@ -34,6 +34,7 @@ public class Book {
 	public float getPrice() { return price; }
 	
 	// Setters
+	public void setId(Long id) { this.id = id; }
 	public void setTitle(String title) { this.title = title; }
 	public void setAuthor(String author) { this.author = author; }
 	public void setIsbn(String isbn) { this.isbn = isbn; }
@@ -46,6 +47,10 @@ public class Book {
 		this.title = "";
 		this.author = "";
 		this.isbn = "";
+	}
+	
+	public Book(Long id) {
+		this.id = id;
 	}
 	
 	public Book(String title) {

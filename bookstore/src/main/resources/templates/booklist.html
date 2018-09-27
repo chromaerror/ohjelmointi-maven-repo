@@ -3,6 +3,7 @@
 		xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Blah page</title>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
 </head>
 
 <body>
@@ -13,6 +14,8 @@
 			<th>Year</th>
 			<th>ISBN</th>
 			<th>Price</th>
+			<th></th>
+			<th></th>
 		</tr>
 		<tr th:each = "book : ${books}">
 			<td th:text="${book.getTitle()}"></td>
@@ -20,7 +23,8 @@
 			<td th:text="${book.getYear()}"></td>
 			<td th:text="${book.getIsbn()}"></td>
 			<td th:text="${book.getPrice()}"></td>
-			<td><a th:href="@{/delete/{id}(id=${book.getId()})}">Delete</a></td>
+			<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.getId()})}">Delete</a></td>
+			<td><a class="btn btn-success" th:href="@{/edit/{id}(id=${book.getId()})}">Edit</a></td>
 		</tr>
 	</table>
 	<a href="/add" class="btn btn-primary">Add book</a>
