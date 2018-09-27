@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+
 @Entity
 public class Book {
 	
@@ -37,6 +38,8 @@ public class Book {
 	public String getIsbn() { return isbn; }
 	public int getYear() { return year; }
 	public float getPrice() { return price; }
+	public Category getCategory() { return this.category; }
+	public String getCategoryName() { return this.category.getName(); }
 	
 	// Setters
 	public void setId(Long id) { this.id = id; }
@@ -45,6 +48,7 @@ public class Book {
 	public void setIsbn(String isbn) { this.isbn = isbn; }
 	public void setYear(int year) { this.year = year; }
 	public void setPrice(float price) { this.price = price; }
+	public void setcategory(Category category) { this.category = category; }
 	
 	// Constructors
 	public Book() {
