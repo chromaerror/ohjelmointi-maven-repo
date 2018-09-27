@@ -14,7 +14,7 @@ import com.example.bookstore.domain.BookRepository;
 
 @Controller
 public class BookController {
-	
+	// NEW COMMIT
 	private static final Logger log = LoggerFactory.getLogger(BookController.class);
 	
 	@Autowired
