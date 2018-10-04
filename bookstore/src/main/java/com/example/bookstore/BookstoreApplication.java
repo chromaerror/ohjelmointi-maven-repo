@@ -29,9 +29,9 @@ public class BookstoreApplication {
 			catrep.save(new Category("Drama"));
 			catrep.save(new Category("Action"));
 			
-			repository.save(new Book("A Farewell to Arms", "Ernest Hemingway", "1233321-12", 1929, catrep.findByName("IT").get(0)));
-			repository.save(new Book("Harry Potter", "J.K Rowling", "1234124-123", 1997, catrep.findByName("IT").get(0)));
-			repository.save(new Book("Animal Farm", "George Orwell", "221231-213", 1945, catrep.findByName("Action").get(0)));
+			repository.save(new Book("A Farewell to Arms", "Ernest Hemingway", "1233321-12", 1929, 0.0, catrep.findByName("IT").get(0)));
+			repository.save(new Book("Harry Potter", "J.K Rowling", "1234124-123", 1997, 0.0, catrep.findByName("IT").get(0)));
+			repository.save(new Book("Animal Farm", "George Orwell", "221231-213", 1945, 0.0, catrep.findByName("Action").get(0)));
 			System.out.println("Books found with findAll:");
 			for(Book book : repository.findAll()) {
 				log.info(book.toString());

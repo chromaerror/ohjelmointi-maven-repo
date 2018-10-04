@@ -28,9 +28,9 @@ public class Book {
 	// Variables
 	private String title, author, isbn;
 	private int year;
-	private float price;
+	private double price;
 	@ManyToOne
-	@JsonIgnore
+	//@JsonIgnore
 	@JoinColumn(name = "categoryid")
 	private Category category;
 	
@@ -40,9 +40,9 @@ public class Book {
 	public String getAuthor() { return author; }
 	public String getIsbn() { return isbn; }
 	public int getYear() { return year; }
-	public float getPrice() { return price; }
+	public double getPrice() { return price; }
 	public Category getCategory() { return this.category; }
-	public String getCategoryName() { return this.category.getName(); }
+	//public String getCategoryName() { return this.category.getName(); }
 	
 	// Setters
 	public void setId(Long id) { this.id = id; }
@@ -50,7 +50,7 @@ public class Book {
 	public void setAuthor(String author) { this.author = author; }
 	public void setIsbn(String isbn) { this.isbn = isbn; }
 	public void setYear(int year) { this.year = year; }
-	public void setPrice(float price) { this.price = price; }
+	public void setPrice(double price) { this.price = price; }
 	public void setcategory(Category category) { this.category = category; }
 	
 	// Constructors
@@ -89,17 +89,19 @@ public class Book {
 		this.year = year;
 	}
 	
-	public Book(String title, String author, String isbn, float price) {
+	public Book(String title, String author, String isbn, int year, double price) {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
+		this.year = year;
 		this.price = price;
 	}
 	
-	public Book(String title, String author, String isbn, float price, Category category) {
+	public Book(String title, String author, String isbn, int year, double price, Category category) {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
+		this.year = year;
 		this.price = price;
 		this.category = category;
 	}
