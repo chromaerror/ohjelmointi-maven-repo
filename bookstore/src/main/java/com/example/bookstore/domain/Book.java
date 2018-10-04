@@ -30,7 +30,7 @@ public class Book {
 	private int year;
 	private double price;
 	@ManyToOne
-	//@JsonIgnore
+	@JsonIgnore
 	@JoinColumn(name = "categoryid")
 	private Category category;
 	
@@ -42,7 +42,7 @@ public class Book {
 	public int getYear() { return year; }
 	public double getPrice() { return price; }
 	public Category getCategory() { return this.category; }
-	//public String getCategoryName() { return this.category.getName(); }
+	public String getCategoryName() { return this.category.getName(); }
 	
 	// Setters
 	public void setId(Long id) { this.id = id; }

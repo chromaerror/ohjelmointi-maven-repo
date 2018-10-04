@@ -27,6 +27,12 @@ public class BookController {
 	@Autowired
 	private CategoryRepository crepository;
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Model model) {
+		model.addAttribute("books", repository.findAll());
+		return "booklist";
+	}
+	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String hello(Model model) {
 		model.addAttribute("books", repository.findAll());
@@ -44,6 +50,16 @@ public class BookController {
 	public String save(Book book) {
 		repository.save(book);
 		return 	"redirect:index";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String showLogin() {
+		return "login";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login() {
+		return "booklist";
 	}
 	
 	@RequestMapping(value = "/save/{id}", method = RequestMethod.POST)

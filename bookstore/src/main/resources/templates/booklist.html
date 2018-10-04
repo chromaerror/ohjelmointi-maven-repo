@@ -15,8 +15,14 @@
 			<th>ISBN</th>
 			<th>Price</th>
 			<th>Category</th>
+			<th><h4>Welcome, [[${#httpServletRequest.remoteUser}]]!</h4></th>
 			<th></th>
-			<th></th>
+			<th><form th:action="@{logout}" method="post">
+				<button type="submit" name="logout" class="btn btn-danger">Logout</button>
+			</form>
+			
+			
+			<!-- </form><a href="@{/logout}" class="btn btn-danger">Logout</a></th> -->
 		</tr>
 		<tr th:each = "book : ${books}">
 			<td th:text="${book.getTitle()}"></td>
@@ -25,8 +31,9 @@
 			<td th:text="${book.getIsbn()}"></td>
 			<td th:text="${book.getPrice()}"></td>
 			<td th:text="${book.getCategoryName()}"></td>
-			<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.getId()})}">Delete</a></td>
-			<td><a class="btn btn-success" th:href="@{/edit/{id}(id=${book.getId()})}">Edit</a></td>
+			<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.getId()})}">Delete</a></td>
+			<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-success" th:href="@{/edit/{id}(id=${book.getId()})}">Edit</a></td>
+			<td></td>
 		</tr>
 	</table>
 	<a href="/add" class="btn btn-primary">Add book</a>
